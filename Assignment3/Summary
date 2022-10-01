@@ -16,7 +16,12 @@ Group Members:
 
 Defects Found:
 
+No defects were found in the code by the reviewers.
+
+Summary of Recommendation:
+
 - Peter Gansallo: 
+Move helper fu
 Add a comment to the helper function to explain what it does.
 Change the variable name of "N".
 
@@ -27,5 +32,25 @@ Create helper function to build the different words.
 Change variable name of "N".
 Overall, break the findAllSolutions into smaller pieces.
 
+Review Time and Defects Found:
+
+I think my reviewers did a great job in reviewing my code.
+I can tell that they both invested time to look at my code in detail.
+While my reviewers did not find any defects in my code, 
+they did make very helpful recommendations to improve my code.
+The biggest improvement i implemented was to include more helper functions 
+in order to keep my main function clean and simple.
+This allows anydody to quickly understand what exactly my code is doing at different stages.
+Another helpful tip was to add comments to all the helper functions.
+This gives a quick overview of what every function's main job is.
+
+While I agreed to most improvement recommendations from my reviewers, 
+there were a few poiunts I disagreed on implementing.
+Ther first point I disagreed on was to change the variable name of "N".
+While a name like "length" might be more understandable at first glance, 
+The explanation of the code asks for a "NxN" grid. 
+Therefore I wanted to make sure that I use the same terminology as in the explanation.
+Another thing i did not choose to implement was to move my helper functions to the top of the main file.
+The reason i did not chose to do that was becaudse 
 
 
