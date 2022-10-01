@@ -1,1 +1,31 @@
+Project Description: 
+
+This is a implementation of a Boggle solver game. 
+The goal of the program is it to find every word from a given dictionary in a grid of characters.
+The requirements are that words must be adjacent tiles, including diagonals, 
+Each word may not use a tile more than once,
+Words need to be longer than 2 characters
+and a "qu" and "st" counts as 2 letters, there are no raw "s" or "q" tiles.
+There are also no other tiles allowed with a bigger length than 1 other that "st" and "qu".
+
+Group Members:
+
+- Benjamin Hoesli
+- Peter Gansallo
+- Esau Hutcherson
+
+Defects Found:
+
+- Peter Gansallo: 
+Add a comment to the helper function to explain what it does.
+Change the variable name of "N".
+
+- Esau Hutcherson
+Create a helper function named toLowerCheck.
+Create helper function for cresting the hash map.
+Create helper function to build the different words.
+Change variable name of "N".
+Overall, break the findAllSolutions into smaller pieces.
+
+
 
