@@ -21,7 +21,7 @@ No defects were found in the code by the reviewers.
 Summary of Recommendation:
 
 - Peter Gansallo: 
-Move helper fu
+Move helper functions to the top of the file.
 Add a comment to the helper function to explain what it does.
 Change the variable name of "N".
 
@@ -51,6 +51,12 @@ While a name like "length" might be more understandable at first glance,
 The explanation of the code asks for a "NxN" grid. 
 Therefore I wanted to make sure that I use the same terminology as in the explanation.
 Another thing i did not choose to implement was to move my helper functions to the top of the main file.
-The reason i did not chose to do that was becaudse 
+The reason i did not chose to do that was because I thionk the "star of the show" should be the main function.
+If anyone would like to take a closer look at the code, they can still scroll down to see the helper functions.
+
+Esau provided me with 5 recommendations for my code from which I used 3 to improve my code.
+Peter provided me with 3 recommendations from which I used 1 to improve my code.
+
+Both feedbacks were very helpful and I'm very happy with my final implementation of the boggle solver.
 
 
