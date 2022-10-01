@@ -1,12 +1,24 @@
-Project Description: 
+Project Description:
 
-This is a implementation of a Boggle solver game. 
-The goal of the program is it to find every word from a given dictionary in a grid of characters.
-The requirements are that words must be adjacent tiles, including diagonals, 
-Each word may not use a tile more than once,
-Words need to be longer than 2 characters
-and a "qu" and "st" counts as 2 letters, there are no raw "s" or "q" tiles.
-There are also no other tiles allowed with a bigger length than 1 other that "st" and "qu".
+This project is a implementation of a boggle solver
+written in JavaScript. 
+The program gets a grid and a dictionary as an input. 
+It then checks which words in the dictionary can be 
+built using the grid.
+The rules are:
+- The letters used must me adjacent tiles in the grid, 
+including diagonals.
+- Every word may not use a tile in the grid more than once.
+- Words must be at least 3 letters long.
+- "qu" and "st" count as 2 letters. 
+- There are no "s" or "q" tiles allowed.
+I decided to implement my solution by using a hash map.
+This allowed me to store every word and every possible 
+prefix inside the hashmap.
+This had the advantage of looking up if a possible word is in 
+the grid in constant time.
+I also implemented a helper function which recursively 
+searches for every possible word in the grid.
 
 Group Members:
 
