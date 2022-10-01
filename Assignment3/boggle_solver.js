@@ -21,61 +21,19 @@ exports.findAllSolutions = function(grid, dictionary) {
       return [];
     }
   }
+
   // convert everything to lowercase and check if no invalid ch in grid.
-  for (let i = 0; i < N; i++) {
-    for (let j = 0; j < N; j++) {
-      grid[i][j] = grid[i][j].toLowerCase();
-      const valid = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'r',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-        'u',
-        't',
-        'qu',
-        'st',
-      ];
-      if (!valid.includes(grid[i][j])) {
-        return [];
-      }
-    }
+  grid = toLowerCheck(grid, N);
+  if (grid == []) {
+    return [];
   }
+
   for (let i = 0; i < dictionary.length; i++) {
     const w = dictionary[i];
     dictionary[i] = w.toLowerCase();
   }
   // prepare hash map
-  const dict = {};
-  for (let i = 0; i < dictionary.length; i++) {
-    dict[dictionary[i]] = 1;
-    for (let ind = 1; ind < dictionary[i].length; ind++) {
-      if (dictionary[i].substr(0, ind) in dict) {
-        if (dict[dictionary[i].substr(0, ind)] == 1) {
-          dict[dictionary[i].substr(0, ind)] = 1;
-        }
-      } else {
-        dict[dictionary[i].substr(0, ind)] = 0;
-      }
-    }
-  }
+  const dict = prepareHash(dictionary);
 
   // build words
   for (let i = 0; i < N; i++) {
@@ -138,4 +96,64 @@ searchword = function(word, y, x, grid, used, dict, solutions) {
     // else unmark visited
     used[[y, x]] = 0;
   }
+};
+
+// This helperfunction checks if all the tiles
+// in the grid are valid and converts the tiles to lowercase.
+toLowerCheck = function(grid, N) {
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < N; j++) {
+      grid[i][j] = grid[i][j].toLowerCase();
+      const valid = [
+        'a',
+        'b',
+        'c',
+        'd',
+        'e',
+        'f',
+        'g',
+        'h',
+        'i',
+        'j',
+        'k',
+        'l',
+        'm',
+        'n',
+        'o',
+        'p',
+        'r',
+        'v',
+        'w',
+        'x',
+        'y',
+        'z',
+        'u',
+        't',
+        'qu',
+        'st',
+      ];
+      if (!valid.includes(grid[i][j])) {
+        return [];
+      }
+    }
+  }
+  return grid;
+};
+
+// This function prepares the hashmap from our dictionary
+prepareHash = function(dictionary) {
+  const dict = {};
+  for (let i = 0; i < dictionary.length; i++) {
+    dict[dictionary[i]] = 1;
+    for (let ind = 1; ind < dictionary[i].length; ind++) {
+      if (dictionary[i].substr(0, ind) in dict) {
+        if (dict[dictionary[i].substr(0, ind)] == 1) {
+          dict[dictionary[i].substr(0, ind)] = 1;
+        }
+      } else {
+        dict[dictionary[i].substr(0, ind)] = 0;
+      }
+    }
+  }
+  return dict;
 };
